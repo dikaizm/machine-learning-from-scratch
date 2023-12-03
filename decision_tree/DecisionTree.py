@@ -92,7 +92,7 @@ class DecisionTreeClassifier:
     def _entropy(self, y):
         hist = np.bincount(y)
         ps = hist / len(y)    
-        return -np.sum([p * np.log(p) for p in ps if p>0])
+        return -np.sum([p * np.log2(p) for p in ps if p>0])
     
     def _most_common_label(self, y):
         counter = Counter(y)
